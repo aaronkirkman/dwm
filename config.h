@@ -42,10 +42,10 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[G]",      gaplessgrid},
-	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
+	{ "[G]",      gaplessgrid},    /* first entry is default */
 	{ "[M]",      monocle },
+	{ "[]=",      tile },
+	{ "><>",      NULL },          /* no layout function means floating behavior */
 };
 
 /* key definitions */
