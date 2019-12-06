@@ -45,7 +45,7 @@ static const Layout layouts[] = {
 	{ "[G]",      gaplessgrid},    /* first entry is default */
 	{ "[M]",      monocle },
 	{ "[]=",      tile },
-	{ "><>",      NULL },          /* no layout function means floating behavior */
+	{ "[F]",      NULL },          /* no layout function means floating behavior */
 };
 
 /* key definitions */
