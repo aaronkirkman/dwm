@@ -20,5 +20,5 @@ Patches included:
 
    - pertag
       - The pertag patch keeps layout, mwfact, barpos and nmaster settings per tag, rather than the default behaviour of having everything global across all tags
-      - I borrowed the configurable nature of pertag and the patch for dwm 6.2 from [https://github.com/bakkeby/dwm-vanitygaps](bakkeby's dwm build)
+      - I borrowed the configurable nature of pertag and the patch for dwm 6.2 from [bakkeby's dwm build](https://github.com/bakkeby/dwm-vanitygaps)
       - Refer to [https://dwm.suckless.org/patches/pertag/](https://dwm.suckless.org/patches/pertag/)
