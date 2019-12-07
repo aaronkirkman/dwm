@@ -10,12 +10,16 @@ Patches included:
       - Refer to [https://dwm.suckless.org/patches/alternativetags/](https://dwm.suckless.org/patches/alternativetags/)
 
 
-
    - gaplessgrid
       - From the patch's description:
      > This patch is an altered gridmode layout for dwm, which arranges the windows in a grid. Instead of using a regular grid, which might leave empty cells when there are not enough windows to fill the grid, it adjusts the number of windows in the first few columns to avoid empty cells.
 
       - Refer to [https://dwm.suckless.org/patches/gaplessgrid/](https://dwm.suckless.org/patches/gaplessgrid/)
+
+
+   - monocle count
+      - In contrast to the default behavior, this patch prints the total number of clients and the number of the currently activated client beside the symbol of the monocle layout instead of printing only the total number of clients
+      - Refer to [https://dwm.suckless.org/patches/monocle_count/](https://dwm.suckless.org/patches/monocle_count/)
 
 
    - pertag
