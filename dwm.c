@@ -742,6 +742,22 @@ drawbar(Monitor *m)
 	unsigned int i, occ = 0, urg = 0;
 	Client *c;
 
+	/* monocle count patch */
+	unsigned int a = 0, s = 0;
+
+	/* monocle count patch */
+	if(m->lt[m->sellt]->arrange == monocle) {
+		for(a = 0, s = 0, c= nexttiled(m->clients); c; c= nexttiled(c->next), a++) {
+			if(c == m->stack) {
+				s = a;
+			}
+		}
+		if(!s && a) {
+			s = a;
+		}
+		snprintf(m->ltsymbol, sizeof m->ltsymbol, "[%d/%d]", s, a);
+	}
+
 	/* draw status first so it can be overdrawn by tags later */
 	if (m == selmon) { /* status is only drawn on selected monitor */
 		drw_setscheme(drw, scheme[SchemeNorm]);
@@ -1155,8 +1171,11 @@ monocle(Monitor *m)
 	for (c = m->clients; c; c = c->next)
 		if (ISVISIBLE(c))
 			n++;
-	if (n > 0) /* override layout symbol */
-		snprintf(m->ltsymbol, sizeof m->ltsymbol, "[%d]", n);
+
+	/* commented out in monocle count patch */
+	/* override layout symbol */
+	/*if (n > 0)
+		snprintf(m->ltsymbol, sizeof m->ltsymbol, "[%d]", n);*/
 	for (c = nexttiled(m->clients); c; c = nexttiled(c->next))
 		resize(c, m->wx, m->wy, m->ww - 2 * c->bw, m->wh - 2 * c->bw, 0);
 }
