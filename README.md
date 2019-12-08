@@ -21,6 +21,10 @@ Patches included:
       - In contrast to the default behavior, this patch prints the total number of clients and the number of the currently activated client beside the symbol of the monocle layout instead of printing only the total number of clients
       - Refer to [https://dwm.suckless.org/patches/monocle_count/](https://dwm.suckless.org/patches/monocle_count/)
 
+   - movestack
+      - Allows you to move clients around in the stack and swap them with the master
+      - Refer to [https://dwm.suckless.org/patches/movestack/](https://dwm.suckless.org/patches/movestack/)
+
 
    - pertag
       - The pertag patch keeps layout, mwfact, barpos and nmaster settings per tag, rather than the default behaviour of having everything global across all tags
