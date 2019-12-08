@@ -31,3 +31,8 @@ Patches included:
       - The pertag patch keeps layout, mwfact, barpos and nmaster settings per tag, rather than the default behaviour of having everything global across all tags
       - I borrowed the configurable nature of pertag and the patch for dwm 6.2 from [bakkeby's dwm build](https://github.com/bakkeby/dwm-vanitygaps)
       - Refer to [https://dwm.suckless.org/patches/pertag/](https://dwm.suckless.org/patches/pertag/)
+
+   - status2d
+      - Allows colors (and 2D rectangles) in the status bar
+      - To use colors: `^c#FF0000^` sets the foreground color and `^d^` resets the color to SchemeNorm
+      - Refer to [https://dwm.suckless.org/patches/status2d/](https://dwm.suckless.org/patches/status2d/)
