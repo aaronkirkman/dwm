@@ -23,6 +23,7 @@ Patches included:
 
    - movestack
       - Allows you to move clients around in the stack and swap them with the master
+      - Keybindings included in `config.h`
       - Refer to [https://dwm.suckless.org/patches/movestack/](https://dwm.suckless.org/patches/movestack/)
 
 
