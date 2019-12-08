@@ -268,7 +268,7 @@ static Atom wmatom[WMLast], netatom[NetLast];
 static int running = 1;
 static Cur *cursor[CurLast];
 static Clr **scheme;
-static int schemenorm = 0, schemesel = 1;
+static int SchemeNorm = 0, schemesel = 1;
 static Display *dpy;
 static Drw *drw;
 static Monitor *mons, *selmon;
@@ -777,7 +777,7 @@ drawstatusbar(Monitor *m, int bh, char* stext) {
 	ret = x = m->ww - w;
 
 	drw_setscheme(drw, scheme[LENGTH(colors)]);
-	drw->scheme[ColFg] = scheme[schemenorm][ColFg];
+	drw->scheme[ColFg] = scheme[SchemeNorm][ColFg];
 	drw_rect(drw, x, 0, w, bh, 1, 1);
 	x++;
 
@@ -802,7 +802,7 @@ drawstatusbar(Monitor *m, int bh, char* stext) {
 					drw_clr_create(drw, &drw->scheme[ColFg], buf);
 					i += 7;
 				} else if (text[i] == 'd') {
-					drw->scheme[ColFg] = scheme[schemenorm][ColFg];
+					drw->scheme[ColFg] = scheme[SchemeNorm][ColFg];
 				} else if (text[i] == 'r') {
 					int rx = atoi(text + ++i);
 					while (text[++i] != ',');
@@ -829,7 +829,7 @@ drawstatusbar(Monitor *m, int bh, char* stext) {
 		drw_text(drw, x, 0, w, bh, 0, text, 0);
 	}
 
-	drw_setscheme(drw, scheme[schemenorm]);
+	drw_setscheme(drw, scheme[SchemeNorm]);
 	free(p);
 
 	return ret;
@@ -875,7 +875,7 @@ drawbar(Monitor *m)
 	for (i = 0; i < LENGTH(tags); i++) {
 		w = TEXTW(tags[i]);
 		wdelta = selmon->alttag ? abs(TEXTW(tags[i]) - TEXTW(tagsalt[i])) / 2 : 0;
-		drw_setscheme(drw, scheme[m->tagset[m->seltags] & 1 << i ? schemesel : schemenorm]);
+		drw_setscheme(drw, scheme[m->tagset[m->seltags] & 1 << i ? schemesel : SchemeNorm]);
 		drw_text(drw, x, 0, w, bh, wdelta + lrpad / 2, (selmon->alttag ? tagsalt[i] : tags[i]), urg & 1 << i);
 		if (occ & 1 << i)
 			drw_rect(drw, x + boxs, boxs, boxw, boxw,
@@ -884,17 +884,17 @@ drawbar(Monitor *m)
 		x += w;
 	}
 	w = blw = TEXTW(m->ltsymbol);
-	drw_setscheme(drw, scheme[schemenorm]);
+	drw_setscheme(drw, scheme[SchemeNorm]);
 	x = drw_text(drw, x, 0, w, bh, lrpad / 2, m->ltsymbol, 0);
 
 	if ((w = m->ww - sw - x) > bh) {
 		if (m->sel) {
-			drw_setscheme(drw, scheme[m == selmon ? schemesel : schemenorm]);
+			drw_setscheme(drw, scheme[m == selmon ? schemesel : SchemeNorm]);
 			drw_text(drw, x, 0, w, bh, lrpad / 2, m->sel->name, 0);
 			if (m->sel->isfloating)
 				drw_rect(drw, x + boxs, boxs, boxw, boxw, m->sel->isfixed, 0);
 		} else {
-			drw_setscheme(drw, scheme[schemenorm]);
+			drw_setscheme(drw, scheme[SchemeNorm]);
 			drw_rect(drw, x, 0, w, bh, 1, 1);
 		}
 	}
@@ -1214,7 +1214,7 @@ manage(Window w, XWindowAttributes *wa)
 
 	wc.border_width = c->bw;
 	XConfigureWindow(dpy, w, CWBorderWidth, &wc);
-	XSetWindowBorder(dpy, w, scheme[schemenorm][ColBorder].pixel);
+	XSetWindowBorder(dpy, w, scheme[SchemeNorm][ColBorder].pixel);
 	configure(c); /* propagates border_width, if size doesn't change */
 	updatewindowtype(c);
 	updatesizehints(c);
@@ -1578,10 +1578,10 @@ schemecycle(const Arg *arg) {
 
 	if ((schemesel + 2) < LENGTH(colors))
 	{
-		schemenorm += 2;
+		SchemeNorm += 2;
 		schemesel += 2;
 	} else {
-		schemenorm = 0;
+		SchemeNorm = 0;
 		schemesel = 1;
 	}
 
@@ -1592,17 +1592,17 @@ void
 schemetoggle(const Arg *arg) {
 
 	int numThemePairs = LENGTH(colors) / 4;
-	int sheme = schemenorm / 2;
+	int sheme = SchemeNorm / 2;
 
 	if (sheme / 2 > numThemePairs-1) {
 		return;
 	}
 
 	if (sheme % 2 == 0) {
-		schemenorm += 2;
+		SchemeNorm += 2;
 		schemesel += 2;
 	} else {
-		schemenorm -= 2;
+		SchemeNorm -= 2;
 		schemesel -= 2;
 	}
 
@@ -1980,7 +1980,7 @@ unfocus(Client *c, int setfocus)
 	if (!c)
 		return;
 	grabbuttons(c, 0);
-	XSetWindowBorder(dpy, c->win, scheme[schemenorm][ColBorder].pixel);
+	XSetWindowBorder(dpy, c->win, scheme[SchemeNorm][ColBorder].pixel);
 	if (setfocus) {
 		XSetInputFocus(dpy, root, RevertToPointerRoot, CurrentTime);
 		XDeleteProperty(dpy, root, netatom[NetActiveWindow]);
