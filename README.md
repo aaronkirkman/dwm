@@ -21,6 +21,7 @@ Patches included:
       - In contrast to the default behavior, this patch prints the total number of clients and the number of the currently activated client beside the symbol of the monocle layout instead of printing only the total number of clients
       - Refer to [https://dwm.suckless.org/patches/monocle_count/](https://dwm.suckless.org/patches/monocle_count/)
 
+
    - movestack
       - Allows you to move clients around in the stack and swap them with the master
       - Keybindings included in `config.h`
@@ -31,6 +32,7 @@ Patches included:
       - The pertag patch keeps layout, mwfact, barpos and nmaster settings per tag, rather than the default behaviour of having everything global across all tags
       - I borrowed the configurable nature of pertag and the patch for dwm 6.2 from [bakkeby's dwm build](https://github.com/bakkeby/dwm-vanitygaps)
       - Refer to [https://dwm.suckless.org/patches/pertag/](https://dwm.suckless.org/patches/pertag/)
+
 
    - status2d
       - Allows colors (and 2D rectangles) in the status bar
