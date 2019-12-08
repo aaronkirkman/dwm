@@ -36,5 +36,6 @@ Patches included:
 
    - status2d
       - Allows colors (and 2D rectangles) in the status bar
+      - For color examples, see my [status bar script](https://github.com/aaronkirkman/statusbar)
       - To use colors: `^c#FF0000^` sets the foreground color and `^d^` resets the color to SchemeNorm
       - Refer to [https://dwm.suckless.org/patches/status2d/](https://dwm.suckless.org/patches/status2d/)
