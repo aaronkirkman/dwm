@@ -1,5 +1,12 @@
 My build of dwm 6.2 with custom patches (and keybindings, in `config.h`). See [https://dwm.suckless.org/](https://dwm.suckless.org/) for details on the dwm window manager, how to build and install it, and how it works.
 
+To build dwm, on Debian 10 ("buster"), install the correct dependencies:
+
+	sudo apt-get install make gcc libx11-dev libxft-dev libxinerama-dev libxrandr-dev
+
+To actually use the X-server, you'll have to install X.org as well:
+
+	sudo apt-get install xorg
 ---
 
 Patches included:
