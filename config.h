@@ -99,7 +99,7 @@ static Key keys[] = {
 	{ WINKEY,                       XK_c,      spawn,          {.v = copycmd } },
 	{ WINKEY,                       XK_v,      spawn,          {.v = pastecmd } },
 	{ WINKEY,                       XK_f,      spawn,          {.v = firefoxcmd } },
-	{ WINKEY,                       XK_c,      spawn,          {.v = chromiumcmd } },
+	{ WINKEY,                       XK_e,      spawn,          {.v = chromiumcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
