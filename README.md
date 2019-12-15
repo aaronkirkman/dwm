@@ -4,9 +4,9 @@ To build dwm, on Debian 10 ("buster"), install the correct dependencies:
 
 	sudo apt-get install make gcc libx11-dev libxft-dev libxinerama-dev libxrandr-dev
 
-To actually use the X-server, you'll have to install X.org as well:
+To actually use the X-server and the custom copy/paste commands, you'll have to install X.org as well:
 
-	sudo apt-get install xorg
+	sudo apt-get install xorg xclip xvkbd
 ---
 
 Patches included:
