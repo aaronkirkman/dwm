@@ -50,7 +50,7 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Midori",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "Chromium",  NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
 /* layout(s) */
@@ -84,7 +84,7 @@ static const char *copycmd[] = { "sh", "-c", "xclip -selection primary -o | xcli
 static const char *pastecmd[] = { "sh", "-c", "xclip -selection clipboard -o | xvkbd -xsendevent -file - 2>/dev/null", NULL };
 static const char *lockcmd[] = { "xscreensaver-command", "-lock", NULL};
 static const char *firefoxcmd[] = { "firefox", "--private-window", NULL };
-static const char *midoricmd[] = { "midori", NULL };
+static const char *chromiumcmd[] = { "chromium", NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 
@@ -99,7 +99,7 @@ static Key keys[] = {
 	{ WINKEY,                       XK_c,      spawn,          {.v = copycmd } },
 	{ WINKEY,                       XK_v,      spawn,          {.v = pastecmd } },
 	{ WINKEY,                       XK_f,      spawn,          {.v = firefoxcmd } },
-	{ WINKEY,                       XK_m,      spawn,          {.v = midoricmd } },
+	{ WINKEY,                       XK_e,      spawn,          {.v = chromiumcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
