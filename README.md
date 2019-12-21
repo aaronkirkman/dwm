@@ -20,6 +20,12 @@ Patches included:
       - Refer to [https://dwm.suckless.org/patches/alternativetags/](https://dwm.suckless.org/patches/alternativetags/)
 
 
+   - extrabar
+      - Adds a bottom status bar in addition to the default top status bar
+      - The bottom bar is controlled by the same keybindings that control the top bar; see `config.h`
+      - Refer to [https://dwm.suckless.org/patches/extrabar/](https://dwm.suckless.org/patches/extrabar/)
+
+
    - gaplessgrid
       - From the patch's description:
      > This patch is an altered gridmode layout for dwm, which arranges the windows in a grid. Instead of using a regular grid, which might leave empty cells when there are not enough windows to fill the grid, it adjusts the number of windows in the first few columns to avoid empty cells.
