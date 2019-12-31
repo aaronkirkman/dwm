@@ -11,8 +11,8 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const char statussep         = ';';      /* separator between status bars */
 static const int pertag             = 1;        /* 0 means global layout across all tags (default), 1 = layout per tag (pertag) */
 static const int pertagbar          = 1;        /* 0 means using pertag, but with the same barpos, 1 = normal pertag */
-static const char *fonts[]          = { "monospace:size=11" };
-static const char dmenufont[]       = "monospace:size=11";
+static const char *fonts[]          = { "Dejavu Sans Mono-11:normal" };
+static const char dmenufont[]       = "Dejavu Sans Mono-11:normal";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
