@@ -84,7 +84,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *copycmd[] = { "sh", "-c", "xclip -selection primary -o | xclip -selection clipboard -i", NULL };
 static const char *pastecmd[] = { "sh", "-c", "xclip -selection clipboard -o | xvkbd -xsendevent -file - 2>/dev/null", NULL };
 static const char *lockcmd[] = { "xscreensaver-command", "-lock", NULL};
-static const char *firefoxcmd[] = { "TZ=UTC firefox", "--private-window", NULL };
+static const char *firefoxcmd[] = { "firefox", "--private-window", NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 
